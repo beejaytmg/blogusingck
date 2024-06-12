@@ -3,18 +3,16 @@
 {% block title %}Bijaya Kumar Tamang{% endblock %}
 
 {% block content %}
-  <div class="blog-post-list">
-    <h1>Blog Posts</h1>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <h2><a href="{% url 'blogpost_detail' post.slug %}">{{ post.title }}</a></h2>
-                <p>{{ post.meta_description }}</p>
-                <p>Published on {{ post.published_date }}</p>
-            </li>
-        {% endfor %}
-    </ul>
-   </div>
+<div class="blog-post-list">
+    <h1 class="blog-post-list-title">Blog Posts</h1>
+    {% for post in posts %}
+        <div class="blog-post {% cycle 'post-odd' 'post-even' %}">
+            <h2 class="post-title"><a class="post-link" href="{% url 'blogpost_detail' post.slug %}">{{ post.title }}</a></h2>
+            <p class="post-meta">{{ post.meta_description }}</p>
+            <p class="post-date">Published on {{ post.published_date }}</p>
+        </div>
+    {% endfor %}
+</div>
     <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
