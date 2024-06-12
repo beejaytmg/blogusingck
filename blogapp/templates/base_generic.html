@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Bijaya Kumar Tamang{% endblock %}</title>
     {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bijaya Kumar Tamang{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Welcome to Bijaya Kumar Tamang's blog. Explore posts on various topics including technology, lifestyle, and more.{% endblock %}">
+    <link rel="icon" type="image/png" href="{% static 'css/pro.jpg' %}"> <!-- Assuming your favicon is a PNG image -->
+    
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9631856282418168"
      crossorigin="anonymous"></script>
@@ -16,8 +20,7 @@
         </nav>
     </header>
 
-    <!-- AdSense Ad Unit -->
-    <div class="ad-container">
+   
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9631856282418168"
          crossorigin="anonymous"></script>
         <!-- arnikim_sidebar_AdSense3_1x1_as -->
@@ -30,26 +33,13 @@
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-    </div>
+
     
     <main>
         {% block content %}
         {% endblock %}
     </main>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9631856282418168"
-     crossorigin="anonymous"></script>
-<!-- arnikim_sidebar_AdSense3_1x1_as -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9631856282418168"
-     data-ad-slot="6611676274"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    <div class="ad-container">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9631856282418168"
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9631856282418168"
          crossorigin="anonymous"></script>
         <!-- arnikim_sidebar_AdSense3_1x1_as -->
         <ins class="adsbygoogle"
@@ -61,7 +51,7 @@
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-    </div>
+
     <footer>
         <p>&copy; 2024 Bijaya Kumar Tamang</p>
     </footer>
