@@ -1,0 +1,129 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e67e22;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Blog Post Listing */
+.blog-post-list h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.blog-post-list ul {
+    list-style: none;
+}
+
+.blog-post-list li {
+    margin-bottom: 40px;
+}
+
+.blog-post-list h2 a {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-post-list h2 a:hover {
+    color: #e67e22;
+}
+
+.blog-post-list p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.pagination a {
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.pagination .current {
+    padding: 8px 16px;
+    background-color: #2c3e50;
+    color: #fff;
+    border-radius: 3px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 20px;
+    }
+
+    nav a {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
