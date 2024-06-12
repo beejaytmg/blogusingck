@@ -4,6 +4,9 @@ from .models import BlogPost
 from django.http import HttpResponse, request
 from django.conf import settings
 import os
+def favicon(request):
+    with open('favicon.ico', 'rb') as f:
+        return HttpResponse(f.read(), content_type='image/x-icon')
 
 def ads_txt(request):
     ads_file_path = os.path.join(settings.BASE_DIR, 'ads.txt')
