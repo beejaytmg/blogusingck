@@ -53,6 +53,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://blogusingck-production.up.railway.app',
+    'bijayakumartamang.com.np'
+]
+ALLOWED_HOSTS = [
+    'blogusingck-production.up.railway.app',
+    '127.0.0.1',
+    'localhost',
+    'bijayakumartamang.com.np'
+]
+
 ROOT_URLCONF = 'blogproject.urls'
 
 TEMPLATES = [
