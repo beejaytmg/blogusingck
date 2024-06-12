@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://blogusingck-production.up.railway.app',
-    'bijayakumartamang.com.np'
+    'https://bijayakumartamang.com.np'
 ]
 ALLOWED_HOSTS = [
     'blogusingck-production.up.railway.app',
