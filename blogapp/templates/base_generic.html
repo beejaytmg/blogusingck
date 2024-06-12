@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Bijaya Kumar Tamang{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Welcome to Bijaya Kumar Tamang's blog. Explore posts on various topics including technology, lifestyle, and more.{% endblock %}">
-    {% comment %} <link rel="icon" type="image/png" href="{% static 'css/pro.jpg' %}"> <!-- Assuming your favicon is a PNG image --> {% endcomment %}
-    
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'css/favicon.ico' %}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9631856282418168"
      crossorigin="anonymous"></script>
     <style>
@@ -18,7 +16,32 @@
             padding: 0;
             background-color: #f8f8ff;
         }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
         
+        .pagination a {
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .pagination a:hover {
+            background-color: #e67e22;
+            color: #fff;
+        }
+        
+        .pagination .current {
+            padding: 8px 16px;
+            background-color: #2c3e50;
+            color: #fff;
+            border-radius: 3px;
+        }
         .topnav {
             overflow: hidden;
             background-color: #4B0082;
