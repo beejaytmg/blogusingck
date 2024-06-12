@@ -24,3 +24,12 @@ class BlogPostListView(ListView):
 class BlogPostDetailView(DetailView):
     model = BlogPost
     template_name = 'blogpost_detail.html'  # Template to render
+def iframe_player(request):
+    # If 'src' is provided in the URL parameter, use it; otherwise, get it from the form
+    src = request.GET.get('src', None)
+    
+    if src:
+        # If 'src' is provided in the URL parameter, redirect to the same view with the 'src' as a parameter
+        return HttpResponse(f'<iframe src="{src}" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>')
+    else:
+        return render(request, 'iframe_player.html', {'src': src})
