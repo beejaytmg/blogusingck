@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vgres49^x2f2t4-dy+j8hi#0mh299i95$&w7s(5s*l82f3=ppa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'bijayakumartamang.com.np']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -141,7 +141,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 CKEDITOR_UPLOAD_PATH = 'uploads/ckeditor/'
 import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
