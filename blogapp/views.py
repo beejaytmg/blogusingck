@@ -33,3 +33,5 @@ def iframe_player(request):
     
     if src:
         return render(request, 'iframe_player.html', {'src': src})
+    else:
+        return render(request, 'iframe_player.html')
