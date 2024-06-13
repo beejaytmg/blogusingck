@@ -32,7 +32,4 @@ def iframe_player(request):
     src = request.GET.get('src', None)
     
     if src:
-        # If 'src' is provided in the URL parameter, redirect to the same view with the 'src' as a parameter
-        return HttpResponse(f'<iframe src="{src}" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>')
-    else:
         return render(request, 'iframe_player.html', {'src': src})
