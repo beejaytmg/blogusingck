@@ -152,6 +152,14 @@
         .post-even {
             background-color: #e8e8e8;
         }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
         
         /* Existing styles for .post-title, .post-link, .post-meta, .post-date */
     </style>
@@ -159,9 +167,7 @@
 <body>
     <div class="topnav">
         <a class="active" href="{% url 'blogpost_list' %}">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a href="{% url 'admin:index' %}">Admin</a>
     </div>
     <main>
         {% block content %}
