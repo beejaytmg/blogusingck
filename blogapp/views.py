@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from .models import BlogPost
 from django.http import HttpResponse, request
@@ -35,11 +35,34 @@ class BlogPostListView(ListView):
 class BlogPostDetailView(DetailView):
     model = BlogPost
     template_name = 'blogpost_detail.html'  # Template to render
-def iframe_player(request):
-    # If 'src' is provided in the URL parameter, use it; otherwise, get it from the form
-    src = request.GET.get('src', None)
-    
-    if src:
-        return render(request, 'iframe_player.html', {'src': src})
+def src_redirect(request):
+    video_url = request.GET.get('src')
+    if video_url:
+        # Print video_url for debugging
+        print("Video URL provided:", video_url)
+        
+        # Store the video URL in the session
+        request.session['video_url'] = video_url
+        
+        # Check if the video URL is set in session
+        print("Video URL stored in session:", request.session.get('video_url'))
+        
+        # Redirect to the video player view
+        return redirect('play')
     else:
-        return render(request, 'iframe_player.html')
+        # Redirect to the error page with a query parameter
+        return redirect(f'/error/?message=No video URL provided')
+
+def video_player(request):
+    # Retrieve the video URL from the session
+    video_url = request.session.get('video_url')
+    
+    # Print video_url for debugging
+    print("Retrieved Video URL from session:", video_url)
+    
+    return render(request, 'video_player.html', {'video_url': video_url})
+
+def error_page(request):
+    message = request.GET.get('message', 'An error occurred')
+    return render(request, 'error.html', {'message': message})
+

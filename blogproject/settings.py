@@ -42,8 +42,8 @@ ALLOWED_HOSTS = [
 ]
 # Middleware
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -80,7 +80,13 @@ DATABASES = {
         default='postgresql://postgres:pLEeRpmrcKdSZFqrsPrjNVIcsLhNXQuW@roundhouse.proxy.rlwy.net:53242/railway'
     )
 }
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
+# Optional session settings
+SESSION_COOKIE_NAME = 'my_session_cookie'
+SESSION_COOKIE_AGE = 3600  # 2 weeks
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_SAVE_EVERY_REQUEST = True
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
