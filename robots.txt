@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /src/
+Disallow: /play/
+Disallow: /error/
 Disallow: /admin/
 Sitemap: https://bijayakumartamang.com.np/sitemap.xml
