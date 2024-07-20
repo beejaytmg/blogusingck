@@ -82,4 +82,3 @@ def src_redirect(request):
 def error_page(request):
     message = request.GET.get('message', 'An error occurred')
     return render(request, 'error.html', {'message': message})
-

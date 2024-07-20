@@ -7,6 +7,5 @@ urlpatterns = [
     path('robots.txt', robots_txt, name='ads-txt'),
     path('favicon.ico', favicon, name='favicon'),
     path('src/', src_redirect, name='iframe_player'),
-    # path('play/', video_player, name='play'),
     path('error/', error_page, name='error'),
 ]
