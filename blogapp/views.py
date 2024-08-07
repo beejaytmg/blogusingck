@@ -5,6 +5,33 @@ from django.http import HttpResponse, request
 from django.conf import settings
 import os
 import random
+from rest_framework import viewsets
+from .models import Skill, Project, Education, Experience, Contact, Resume
+from .serializers import SkillSerializer, ProjectSerializer, EducationSerializer, ExperienceSerializer, ContactSerializer, ResumeSerializer
+
+class SkillViewSet(viewsets.ModelViewSet):
+    queryset = Skill.objects.all()
+    serializer_class = SkillSerializer
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+class EducationViewSet(viewsets.ModelViewSet):
+    queryset = Education.objects.all()
+    serializer_class = EducationSerializer
+
+class ExperienceViewSet(viewsets.ModelViewSet):
+    queryset = Experience.objects.all()
+    serializer_class = ExperienceSerializer
+
+class ContactViewSet(viewsets.ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+
+class ResumeViewSet(viewsets.ModelViewSet):
+    queryset = Resume.objects.all()
+    serializer_class = ResumeSerializer
 def favicon(request):
     with open('favicon.ico', 'rb') as f:
         return HttpResponse(f.read(), content_type='image/x-icon')

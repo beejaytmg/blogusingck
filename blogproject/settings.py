@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'blogapp',
     'ckeditor',
+    'rest_framework',
 ]
 CSRF_TRUSTED_ORIGINS = [
     'https://blogusingck-production.up.railway.app',
